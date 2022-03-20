@@ -6,7 +6,7 @@ import threading
 import ftplib
 
 
-print "\nFTP server is running.\n\nTo begin, connect a client."
+print ("\nFTP server is running.\n\nTo begin, connect a client.")
 
 def functionOne(connection_socket):
     sentence = connection_socket.recv(buffer_size).decode('utf-8')
