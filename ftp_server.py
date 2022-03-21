@@ -55,6 +55,9 @@ while True:
     data = connection_socket.recv(BUFFER_SIZE)
     print ("\nRecieved instruction: {}".format(data))
 
+    
+     # Helper Method using Target for commands
+
     if data == "LIST":
         list_files()
 
