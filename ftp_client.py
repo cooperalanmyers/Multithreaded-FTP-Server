@@ -48,7 +48,7 @@ def list_files():
         total_size = struct.unpack("i", s.recv(4))[0]
     
     except:
-        print "Couldn't retrieve listing"
+        print ("Couldn't retrieve listing")
         return
 
     try:
@@ -57,7 +57,7 @@ def list_files():
         return
 
     except:
-        print "Couldn't get final server confirmation"
+        print ("Couldn't get final server confirmation")
         return
 
 def quit():
