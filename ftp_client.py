@@ -7,6 +7,7 @@ import struct
 server_ip = 'localhost'
 server_port = 2309
 buffer_size = 1024
+new_server_port = 2308
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -26,6 +27,12 @@ def connect():
         client_socket.connect((connectIP, connectPort))
 
 def list_files():
+    
+    new_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    new_client_socket.bind((server_ip, new_server_port))
+
+    new_client_socket.listen()
+    
     print ("Searching for list of files..\n")
     
     try:
