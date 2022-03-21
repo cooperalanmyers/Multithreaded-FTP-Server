@@ -2,7 +2,7 @@
 # 3/19/31
 
 import socket
-
+import struct
 
 server_ip = 'localhost'
 server_port = 2309
@@ -24,6 +24,41 @@ def connect():
 
     if connectTemp[0] == paramOne:
         client_socket.connect((connectIP, connectPort))
+
+def list_files():
+    print ("Searching for list of files..\n")
+    
+    try:
+        client_socket.send("LIST")
+    except:
+        print ("Server error upon request.")
+        return
+
+    try:
+        # Recieving number of files
+        num_files = struct.unpack("i", client_socket.recv(4))[0]
+    
+        for i in range(int(num_files))
+            file_name_size = struct.unpack("i", client_socket.recv(4))[0]
+            file_name = client_socket.recv(file_name_size)
+            file_size = struct.unpack("i", client_socket.recv(4))[0]
+            print "\t{} - {}b".format(file_name, file_size)
+            client_socket.send("1")
+            
+        total_size = struct.unpack("i", s.recv(4))[0]
+    
+    except:
+        print "Couldn't retrieve listing"
+        return
+
+    try:
+        # Final check
+        s.send("1")
+        return
+
+    except:
+        print "Couldn't get final server confirmation"
+        return
 
 def quit():
     client_socket.send("QUIT")

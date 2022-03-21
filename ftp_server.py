@@ -3,16 +3,13 @@
 
 import socket
 import threading
-import ftplib
+import sys
+import os
+import struct
+import time
 
 
 print ("\nFTP server is running.\n\nTo begin, connect a client.")
-
-def functionOne(connection_socket):
-    sentence = connection_socket.recv(buffer_size).decode('utf-8')
-    modified_sentence = sentence.upper()
-    connection_socket.send(modified_sentence.encode('utf-8'))
-    connection_socket.close()
 
 server_ip = 'localhost'
 server_port = 2309
@@ -22,11 +19,7 @@ server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.bind((server_ip, server_port))
 
 server_socket.listen()
-
-while True:
-    connection_socket, addr = server_socket.accept()
-    threading.Thread(target=functionOne, args=(connection_socket,)).start()
-    print ("Successfully connected to: \n" + addr)
+    
 
 def quit():
     # Send quit conformation
@@ -49,26 +42,27 @@ def list_files():
     #Final check
     connection_socket.recv(BUFFER_SIZE)
     print ("Successfully sent file listing")
+    connection_socket.close()
     return
 
 
 while True:
 
+    connection_socket, addr = server_socket.accept()
+    threading.Thread(target=None, args=(connection_socket,)).start()
+
     print ("\n\nWaiting for instruction")
     data = connection_socket.recv(BUFFER_SIZE)
     print ("\nRecieved instruction: {}".format(data))
 
-    if data == "CONNECT":
-        upld()
-
-    elif data == "LIST":
+    if data == "LIST":
         list_files()
 
     elif data == "RETR":
-        dwld()
+        retr()
 
     elif data == "STOR":
-        delf()
+        stor()
 
     elif data == "QUIT":
         quit()
