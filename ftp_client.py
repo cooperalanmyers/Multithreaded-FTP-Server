@@ -64,7 +64,7 @@ def list_files():
 
     try:
         # Final check
-        s.send("1")
+        client_socket.send("1")
         return
 
     except:
