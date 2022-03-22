@@ -23,29 +23,34 @@ server_socket.bind((server_ip, server_port))
 server_socket.listen()
 print("The Server is ready to recieve!\")
     
+      
+# Method for Server Instruction Commands Menu
 def command_menu():
     while true:
            print ("\n\nWaiting for instruction")
-        data = connection_socket.recv(BUFFER_SIZE)
-        print ("\nRecieved instruction: {}".format(data))
-
+           data = connection_socket.recv(BUFFER_SIZE)
+      
+           # Print Requested Command to Screen
+           print ("\nRecieved instruction: {}".format(data))
     
-        # Helper Method using Target for commands
+           # Helper Method using Target for commands
+           if data == "CONN":
+           connect()
+      
+           elif data == "LIST":
+           list_files()
 
-        if data == "LIST":
-        list_files()
+           elif data == "RETR":
+           retr()
 
-        elif data == "RETR":
-        retr()
+           elif data == "STOR":
+           stor()
 
-        elif data == "STOR":
-        stor()
+           elif data == "QUIT":
+           quit()
 
-        elif data == "QUIT":
-        quit()
-
-        # Reset the data to loop
-        data = None
+           # Reset Data to Loop Through Again
+           data = None
     
 def quit():
     # Send quit conformation
