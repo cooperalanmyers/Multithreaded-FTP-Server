@@ -109,6 +109,6 @@ while True:
         break
 
     else:
-        print "Command not recognised; please try again"
+        print "Command not recognized; please try again"
 
 client_socket.close()
