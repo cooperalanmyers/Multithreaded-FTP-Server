@@ -12,6 +12,7 @@ new_server_port = random.randint(0,9999)
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+# Connect Method From Client Input
 def connect():
     print ("CONNECT <server name/IP address> <server port>")
     connectionData =  input()
@@ -23,7 +24,7 @@ def connect():
     connectIP = connectTemp[1]
     connectPort = connectTemp[2]
 
-
+    # If Client Says "CONNECT" Then Connect
     if connectTemp[0] == paramOne:
         client_socket.connect((connectIP, connectPort))
 
