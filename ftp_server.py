@@ -23,7 +23,6 @@ server_socket.bind((server_ip, server_port))
 server_socket.listen()
 print("The Server is ready to recieve!\")
     
-      
 # Method for Server Instruction Commands Menu
 def command_menu():
     while true:
