@@ -3,13 +3,13 @@
 
 import socket
 import struct
+import random
 
 server_ip = 'localhost'
 server_port = 2309
 buffer_size = 1024
-new_server_port = 2308
+new_server_port = random.randint(0,9999)
 
-# Random number and send data to server
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 def connect():
