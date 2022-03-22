@@ -1,5 +1,7 @@
 # Multithreaded FTP Server
-# 3/19/31
+# 3/23/31
+# Cooper Myers
+# CIS 457 Data Communications
 
 import socket
 import struct
