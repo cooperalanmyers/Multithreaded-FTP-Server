@@ -73,7 +73,7 @@ def quit():
     client_socket.send("QUIT")
     # client_socket.recv(BUFFER_SIZE)
     client_socket.close()
-    print "Server connection ended"
+    print ("Server connection ended")
     return
 
 connect()
