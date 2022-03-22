@@ -29,7 +29,7 @@ print("The Server is ready to recieve!\")
 def command_menu():
     while true:
            print ("\n\nWaiting for instruction")
-           data = connection_socket.recv(BUFFER_SIZE)
+           data = connection_socket.recv(buffer_size).decode('utf-8')
       
            # Print Requested Command to Screen
            print ("\nRecieved instruction: {}".format(data))
