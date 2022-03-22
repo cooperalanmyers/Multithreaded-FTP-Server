@@ -8,17 +8,20 @@ import os
 import struct
 import time
 
+# Beginning Message to Server
+print ("\nFTP server is running.\n\nTo begin, connect a client.\n")
 
-print ("\nFTP server is running.\n\nTo begin, connect a client.")
-
+# Storing Server Data Information
 server_ip = 'localhost'
 server_port = 2309
 buffer_size = 1024
 
+# Creaating Server Socket, Binding, then Listening
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.bind((server_ip, server_port))
 
 server_socket.listen()
+print("The Server is ready to recieve!\")
     
 def command_menu():
     while true:
@@ -70,7 +73,6 @@ def list_files():
 
 
 while True:
-
     connection_socket, addr = server_socket.accept()
     threading.Thread(target=command_menu, args=(connection_socket,)).start()
 
