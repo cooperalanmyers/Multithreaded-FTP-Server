@@ -74,7 +74,8 @@ def list_files():
         return
 
 def quit():
-    client_socket.send("QUIT")
+    quitMessage = "QUIT"
+    client_socket.send(quitMessage.encode('utf-8')
     client_socket.close()
     print ("Server connection ended")
     return
