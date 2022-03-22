@@ -76,8 +76,8 @@ def quit():
     print ("Server connection ended")
     return
 
-connect()
 
+# Anything Below is the Client Menu that Automatically Prompts
 
 print ("\n\nWelcome to the FTP client.
         \n\nCall one of the following functions:
