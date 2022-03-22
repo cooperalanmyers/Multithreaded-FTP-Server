@@ -33,10 +33,7 @@ def command_menu():
            print ("\nRecieved instruction: {}".format(data))
     
            # Helper Method using Target for commands
-           if data == "CONN":
-           connect()
-      
-           elif data == "LIST":
+           if data == "LIST":
            list_files()
 
            elif data == "RETR":
