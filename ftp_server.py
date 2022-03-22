@@ -20,7 +20,30 @@ server_socket.bind((server_ip, server_port))
 
 server_socket.listen()
     
+def command_menu():
+    while true:
+           print ("\n\nWaiting for instruction")
+        data = connection_socket.recv(BUFFER_SIZE)
+        print ("\nRecieved instruction: {}".format(data))
 
+    
+        # Helper Method using Target for commands
+
+        if data == "LIST":
+        list_files()
+
+        elif data == "RETR":
+        retr()
+
+        elif data == "STOR":
+        stor()
+
+        elif data == "QUIT":
+        quit()
+
+        # Reset the data to loop
+        data = None
+    
 def quit():
     # Send quit conformation
     connection_socket.send("1")
@@ -49,27 +72,5 @@ def list_files():
 while True:
 
     connection_socket, addr = server_socket.accept()
-    threading.Thread(target=None, args=(connection_socket,)).start()
-
-    print ("\n\nWaiting for instruction")
-    data = connection_socket.recv(BUFFER_SIZE)
-    print ("\nRecieved instruction: {}".format(data))
-
-    
-     # Helper Method using Target for commands
-
-    if data == "LIST":
-        list_files()
-
-    elif data == "RETR":
-        retr()
-
-    elif data == "STOR":
-        stor()
-
-    elif data == "QUIT":
-        quit()
-
-    # Reset the data to loop
-    data = None
+    threading.Thread(target=command_menu, args=(connection_socket,)).start()
 
