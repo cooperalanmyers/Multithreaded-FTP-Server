@@ -16,7 +16,7 @@ server_ip = 'localhost'
 server_port = 2309
 buffer_size = 1024
 
-# Creaating Server Socket, Binding, then Listening
+# Creating Server Socket, Binding, then Listening
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.bind((server_ip, server_port))
 
