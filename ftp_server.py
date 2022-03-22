@@ -34,16 +34,13 @@ def command_menu():
            # Print Requested Command to Screen
            print ("\nRecieved instruction: {}".format(data))
     
-           # Helper Method using Target for commands
+           # If Command Matches go to Following Helper Method
            if data == "LIST":
            list_files()
-
            elif data == "RETR":
            retr()
-
            elif data == "STOR":
            stor()
-
            elif data == "QUIT":
            quit()
 
