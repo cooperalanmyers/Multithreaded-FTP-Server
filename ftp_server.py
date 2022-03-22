@@ -69,6 +69,12 @@ def list_files():
     print ("Successfully sent file listing")
     connection_socket.close()
     return
+      
+def retr():
+      return
+
+def stor():
+      return
 
 
 while True:
