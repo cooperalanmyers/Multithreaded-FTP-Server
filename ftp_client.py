@@ -32,20 +32,15 @@ def connect():
         client_socket.connect((connectIP, connectPort))
 
 def list_files():
-    client_socket.send("LIST")
-    
+    listMessage = "LIST"
+    client_socket.send(listMessage.encode('utf-8')
+
     new_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     new_client_socket.bind((server_ip, new_server_port))
 
     new_client_socket.listen()
     
     print ("Searching for list of files..\n")
-    
-    try:
-        client_socket.send("LIST")
-    except:
-        print ("Server error upon request.")
-        return
 
     try:
         # Recieving number of files
