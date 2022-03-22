@@ -28,6 +28,7 @@ def connect():
         client_socket.connect((connectIP, connectPort))
 
 def list_files():
+    client_socket.send("LIST")
     
     new_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     new_client_socket.bind((server_ip, new_server_port))
@@ -70,8 +71,7 @@ def list_files():
 
 def quit():
     client_socket.send("QUIT")
-
-    client_socket.recv(BUFFER_SIZE)
+    # client_socket.recv(BUFFER_SIZE)
     client_socket.close()
     print "Server connection ended"
     return
