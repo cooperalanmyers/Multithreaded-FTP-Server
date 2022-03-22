@@ -10,6 +10,7 @@ server_port = 2309
 buffer_size = 1024
 new_server_port = random.randint(0,9999)
 
+# Creating Client Socket
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Connect Method From Client Input
