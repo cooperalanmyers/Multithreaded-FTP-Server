@@ -53,8 +53,6 @@ def command_menu():
            data = None
     
 def quit():
-    # Send quit conformation
-    connection_socket.send("1")
     # Close the server
     connection_socket.close()
     server_socket.close()
