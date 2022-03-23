@@ -121,5 +121,3 @@ while True:
 
     else:
         print ("Command not recognized; please try again")
-
-client_socket.close()
