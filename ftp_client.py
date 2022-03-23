@@ -63,9 +63,11 @@ def dataConnection():
     new_client_socket.bind((server_ip, int(new_server_port)))
 
     new_client_socket.listen()
-        
-    newData = "Client as Server Connected"
-    new_client_socket.send(newData.encode('utf-8'))
+      
+    # recieve!!!!
+    
+    # newData = "Client as Server Connected"
+    # new_client_socket.send(newData.encode('utf-8'))
 
 
 
