@@ -80,7 +80,8 @@ def dataConnection():
     new_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
     time.sleep(1)
-    new_server_socket.connect((server_ip, int(new_port_number)))
+    # new_server_socket.connect((server_ip, int(new_port_number)))
+    new_server_socket.connect((127.0.0.1, int(new_port_number)))
 
     
     newData = new_server_socket.recv(BUFFER_SIZE).decode('utf-8')
