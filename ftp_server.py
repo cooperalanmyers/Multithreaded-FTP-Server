@@ -81,7 +81,7 @@ def stor():
 
 
 def dataConnection():
-    
+    return
     # new_server_socket.connect((server_ip, int(new_port_number)))
     # new_server_socket.connect((server_ip, int(new_port_number)))
 
