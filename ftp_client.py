@@ -57,7 +57,7 @@ def dataConnection():
     new_client_socket.bind((server_ip, new_server_port))
 
     new_client_socket.listen()
-
+    print('Data Connetion is now Listening!\n')
     ## client_socket.send(new_server_port.encode('utf-8'))
 
 
