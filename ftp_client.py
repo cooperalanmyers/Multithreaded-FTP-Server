@@ -8,7 +8,7 @@ import struct
 import random
 
 server_ip = 'localhost'
-server_port = 9000
+server_port = 2309
 buffer_size = 1024
 
 # Creating Client Socket
