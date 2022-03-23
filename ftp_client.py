@@ -10,6 +10,8 @@ import random
 server_ip = 'localhost'
 server_port = 2309
 buffer_size = 1024
+new_server_port = random.randint(1030,9999)
+# Make sure I am using credible port numbers within a range
 
 # Creating Client Socket
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -30,6 +32,7 @@ def connect():
     if connectTemp[0].upper() == paramOne: 
         client_socket.connect((connectIP, int(connectPort)))
         client_socket.send(paramOne.encode('utf-8'))
+        client_socket.send(new_server_port.encode('utf-8'))
 
 def list_files():
     listMessage = "LIST"
@@ -76,8 +79,6 @@ def quit():
     return
 
 def dataConnection():
-    new_server_port = random.randint(0,9999)
-
     new_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     new_client_socket.bind((server_ip, new_server_port))
 
