@@ -8,9 +8,8 @@ import struct
 import random
 
 server_ip = 'localhost'
-server_port = 2309
+server_port = 9000
 buffer_size = 1024
-new_server_port = random.randint(0,9999)
 
 # Creating Client Socket
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -24,21 +23,16 @@ def connect():
     connectTemp = connectionData.split(separator, -1)
 
     paramOne = 'CONNECT'
-    connectIP = connectTemp[1]
+    connectIP = '127.0.0.1' if connectTemp[1] == 'localhost' else connectTemp[1]
     connectPort = connectTemp[2]
 
     # If Client Says "CONNECT" Then Connect
     if connectTemp[0] == paramOne:
-        client_socket.connect((connectIP, connectPort))
+        client_socket.connect((connectIP, int(connectPort)))
 
 def list_files():
     listMessage = "LIST"
-    client_socket.send(listMessage.encode('utf-8')
-
-    new_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    new_client_socket.bind((server_ip, new_server_port))
-
-    new_client_socket.listen()
+    client_socket.send(listMessage.encode('utf-8'))
     
     print ("Searching for list of files..\n")
 
@@ -46,11 +40,11 @@ def list_files():
         # Recieving number of files
         num_files = struct.unpack("i", client_socket.recv(4))[0]
     
-        for i in range(int(num_files))
+        for i in range(int(num_files)):
             file_name_size = struct.unpack("i", client_socket.recv(4))[0]
             file_name = client_socket.recv(file_name_size)
             file_size = struct.unpack("i", client_socket.recv(4))[0]
-            print "\t{} - {}b".format(file_name, file_size)
+            print("\t{} - {}b".format(file_name, file_size))
             client_socket.send("1")
             
         total_size = struct.unpack("i", s.recv(4))[0]
@@ -68,23 +62,38 @@ def list_files():
         print ("Couldn't get final server confirmation")
         return
 
+def retr():
+    pass
+
 def quit():
     quitMessage = "QUIT"
-    client_socket.send(quitMessage.encode('utf-8')
+    client_socket.send(quitMessage.encode('utf-8'))
     client_socket.close()
     print ("Server connection ended")
     return
 
+def dataConnection():
+    new_server_port = random.randint(0,9999)
+
+    new_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    new_client_socket.bind((server_ip, new_server_port))
+
+    new_client_socket.listen()
+
+    ## client_socket.send(new_server_port.encode('utf-8'))
+
+
 
 # Anything Below is the Client Menu that Automatically Prompts
 
-print ("\n\nWelcome to the FTP client.
+
+print ("""\n\nWelcome to the FTP client.
         \n\nCall one of the following functions:
         \nCONNECT           : Connect to server
         \nLIST              : List files
         \nRETR              : Retrieve file
         \nSTOR              : Send file
-        \nQUIT              : Exit\n")
+        \nQUIT              : Exit\n""")
 
 while True:
 
@@ -98,7 +107,7 @@ while True:
         list_files()
 
     elif prompt[:4].upper() == "RETR":
-        retrieve_file()
+        retr()
 
     elif prompt[:4].upper() == "STOR":
         store_file()
@@ -106,6 +115,9 @@ while True:
     elif prompt[:4].upper() == "QUIT":
         quit()
         break
+    
+    if isinstance(var, int)''
+
 
     else:
         print ("Command not recognized; please try again")
