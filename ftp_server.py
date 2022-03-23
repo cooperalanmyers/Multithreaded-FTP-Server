@@ -52,8 +52,6 @@ def quit():
 
 def list_files():
     
-    dataConnection()
-    
     
     #print ("Listing files...")
     # Get list of files in directory
