@@ -55,7 +55,7 @@ def quit():
 
 def dataConnection():
     new_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    new_client_socket.bind((server_ip, new_server_port))
+    new_client_socket.bind((server_ip, str(new_server_port)))
 
     new_client_socket.listen()
     
