@@ -11,6 +11,7 @@ server_ip = 'localhost'
 server_port = 2309
 buffer_size = 1024
 new_server_port = random.randint(2000,9999)
+new_server_port = str(new_server_port)
 # Make sure I am using credible port numbers within a range
 
 # Creating Client Socket
