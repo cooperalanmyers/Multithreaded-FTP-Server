@@ -74,7 +74,7 @@ print ("\nFTP server is running.\n\nTo begin, connect a client.\n")
 
 # Storing Server Data Information
 server_ip = 'localhost'
-server_port = 9000
+server_port = 2309
 BUFFER_SIZE = 1024
 
 # Creating Server Socket, Binding, then Listening
