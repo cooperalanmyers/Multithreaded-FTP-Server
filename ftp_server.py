@@ -28,6 +28,7 @@ def command_menu(connection_socket):
                stor()
            elif data == "QUIT":
                quit()
+                return
 
            # Reset Data to Loop Through Again
            data = None
@@ -35,6 +36,7 @@ def command_menu(connection_socket):
 def quit():
     # Close the server
     connection_socket.close()
+    return
 
 def list_files():
     print ("Listing files...")
