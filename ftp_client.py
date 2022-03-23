@@ -37,7 +37,7 @@ def connect():
 def list_files():
     listMessage = "LIST"
     client_socket.send(listMessage.encode('utf-8'))
-    print ("Searching for list of files..\n")
+    #print ("Searching for list of files..\n")
 
     # Helper Method For New Data Connection
     dataConnection()
