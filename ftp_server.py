@@ -84,7 +84,7 @@ def dataConnection():
     new_server_socket.connect((server_ip, int(new_port_number)))
 
     newData = "Now Connected!"
-    new_client_socket.send(newData.encode('utf-8'))
+    new_server_socket.send(newData.encode('utf-8'))
     
     
 
