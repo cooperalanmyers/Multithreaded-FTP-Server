@@ -45,22 +45,26 @@ def quit():
     return
 
 def list_files():
-    print ("Listing files...")
+    
+    
+    
+    
+    #print ("Listing files...")
     # Get list of files in directory
 
-    listing = os.listdir(os.getcwd())
+    #listing = os.listdir(os.getcwd())
     # Send over the file names
-    for i in listing:
+    #for i in listing:
         # File name
-        connection_socket.send(i.encode('utf-8'))
+        #connection_socket.send(i.encode('utf-8'))
 
         # Make sure that the client and server are syncronised
-        connection_socket.recv(BUFFER_SIZE)
+        #connection_socket.recv(BUFFER_SIZE)
 
     #Final check
-    connection_socket.recv(BUFFER_SIZE)
+    #connection_socket.recv(BUFFER_SIZE)
     print ("Successfully sent file listing")
-    connection_socket.close()
+    #connection_socket.close()
     return
       
 def retr():
