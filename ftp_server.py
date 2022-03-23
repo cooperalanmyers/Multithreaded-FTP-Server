@@ -80,7 +80,7 @@ def dataConnection():
     new_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
     # new_server_socket.connect((server_ip, int(new_port_number)))
-    new_server_socket.connect((server_ip, int(new_port_number)))
+    # new_server_socket.connect((server_ip, int(new_port_number)))
 
     newData = "Now Connected!"
     new_server_socket.send(newData.encode('utf-8'))
