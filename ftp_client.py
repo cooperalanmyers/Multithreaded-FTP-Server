@@ -29,6 +29,7 @@ def connect():
     # If Client Says "CONNECT" Then Connect
     if connectTemp[0] == paramOne:
         client_socket.connect((connectIP, int(connectPort)))
+        client_socket.send(paramOne.encode('utf-8'))
 
 def list_files():
     listMessage = "LIST"
