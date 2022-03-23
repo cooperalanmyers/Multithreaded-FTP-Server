@@ -46,7 +46,7 @@ def quit():
 
 def list_files():
     
-    
+    data_connection()
     
     
     #print ("Listing files...")
@@ -63,7 +63,7 @@ def list_files():
 
     #Final check
     #connection_socket.recv(BUFFER_SIZE)
-    print ("Successfully sent file listing")
+    #print ("Successfully sent file listing")
     #connection_socket.close()
     return
       
@@ -76,8 +76,11 @@ def stor():
 
 def dataConnection():
     new_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
     new_server_socket.connect()
+    
+    newData = new_server_socket.recv(BUFF_SIZE).decode('utf-8')
+    print(newData)
+    
 
 # Beginning Message to Server
 print ("\nFTP server is running.\n\nTo begin, connect a client.\n")
