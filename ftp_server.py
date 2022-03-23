@@ -28,7 +28,7 @@ def command_menu(connection_socket):
                stor()
            elif data == "QUIT":
                quit()
-                return
+               return
 
            # Reset Data to Loop Through Again
            data = None
