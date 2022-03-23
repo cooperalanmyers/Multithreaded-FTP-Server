@@ -76,10 +76,8 @@ def stor():
 
 def dataConnection():
     new_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    new_server_socket.connect((connect_IP, int(newData)))
-    
-    client_socket.connect((connectIP, int(connectPort)))
-    
+    new_server_socket.connect((connect_ip, int(newData)))
+        
     newData = new_server_socket.recv(BUFF_SIZE).decode('utf-8')
     print(newData)
     
