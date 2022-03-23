@@ -76,10 +76,10 @@ def stor():
 
 def dataConnection():
     new_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    new_server_socket.connect((server_ip, int(newData)))
-        
-    newData = new_server_socket.recv(BUFF_SIZE).decode('utf-8')
+    newData = server_socket.recv(BUFF_SIZE).decode('utf-8')
     print(newData)
+    
+    new_server_socket.connect((server_ip, int(newData)))
     
 
 # Beginning Message to Server
