@@ -34,6 +34,9 @@ def connect():
     if connectTemp[0].upper() == paramOne: 
         client_socket.connect((connectIP, int(connectPort)))
         client_socket.send(paramOne.encode('utf-8'))
+        
+        time.sleep(4)
+        
         client_socket.send(new_server_port.encode('utf-8'))
 
 def list_files():
@@ -59,9 +62,7 @@ def dataConnection():
     new_client_socket.bind((server_ip, int(new_server_port)))
 
     new_client_socket.listen()
-    
-    time.sleep(5)
-    
+        
     newData = "Client as Server Connected"
     new_client_socket.send(newData.encode('utf-8'))
 
