@@ -34,9 +34,11 @@ def connect():
 def list_files():
     listMessage = "LIST"
     client_socket.send(listMessage.encode('utf-8'))
-    
     print ("Searching for list of files..\n")
 
+    # Helper Method For New Data Connection
+    dataConnection()
+    
     try:
         # Recieving number of files
         num_files = struct.unpack("i", client_socket.recv(4))[0]
