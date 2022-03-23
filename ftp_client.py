@@ -60,7 +60,7 @@ def dataConnection():
 
     new_client_socket.listen()
     
-    time.sleep(0.5)
+    time.sleep(5)
     
     newData = "Client as Server Connected"
     new_client_socket.send(newData.encode('utf-8'))
