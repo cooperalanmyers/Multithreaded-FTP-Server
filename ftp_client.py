@@ -68,7 +68,7 @@ def retr():
 def quit():
     quitMessage = "QUIT"
     client_socket.send(quitMessage.encode('utf-8'))
-    client_socket.close()
+    #client_socket.close()
     print ("Server connection ended")
     return
 
