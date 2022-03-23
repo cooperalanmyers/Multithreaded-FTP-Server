@@ -30,6 +30,11 @@ def command_menu(connection_socket):
                quit()
                return
         
+           elif (type(data) == int) & len(data) == 4:
+                new_port_number = data
+                new_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                new_server_socket.connect((connectIP, int(new_port_number)))
+        
            # Reset Data to Loop Through Again
            data = None
     
