@@ -36,6 +36,7 @@ def command_menu(connection_socket):
 def quit():
     # Close the server
     connection_socket.close()
+    print("Successfully disconnected from client")
     return
 
 def list_files():
