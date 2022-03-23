@@ -6,6 +6,7 @@
 import socket
 import struct
 import random
+import time
 
 server_ip = 'localhost'
 server_port = 2309
@@ -58,6 +59,8 @@ def dataConnection():
     new_client_socket.bind((server_ip, int(new_server_port)))
 
     new_client_socket.listen()
+    
+    time.sleep(0.5)
     
     newData = "Client as Server Connected"
     new_client_socket.send(newData.encode('utf-8'))
