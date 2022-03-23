@@ -34,7 +34,11 @@ def command_menu(connection_socket):
     
 def quit():
     # Close the server
-    # connection_socket.close()
+    server_socket.close()
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_socket.bind((server_ip, server_port))
+
+    server_socket.listen()
     return
 
 def list_files():
