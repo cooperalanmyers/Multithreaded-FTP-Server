@@ -83,9 +83,8 @@ def dataConnection():
     # new_server_socket.connect((server_ip, int(new_port_number)))
     new_server_socket.connect((server_ip, int(new_port_number)))
 
-    
-    newData = new_server_socket.recv(BUFFER_SIZE).decode('utf-8')
-    print(newData)
+    newData = "Now Connected!"
+    new_client_socket.send(newData.encode('utf-8'))
     
     
 
