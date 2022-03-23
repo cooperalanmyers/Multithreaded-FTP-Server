@@ -34,7 +34,8 @@ def command_menu(connection_socket):
     
 def quit():
     # Close the server
-    connection_socket.close()
+    # connection_socket.close()
+    pass
 
 def list_files():
     print ("Listing files...")
