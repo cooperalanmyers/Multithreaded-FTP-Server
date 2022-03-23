@@ -32,10 +32,10 @@ def command_menu(connection_socket):
            # Reset Data to Loop Through Again
            data = None
     
-def quit(connection_socket):
+def quit():
     # Close the server
     connection_socket.close()
-    pass
+    return
 
 def list_files():
     print ("Listing files...")
