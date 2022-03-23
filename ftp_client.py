@@ -37,8 +37,9 @@ def connect():
         
         time.sleep(2)
         
-        client_socket.send(new_server_port.encode('utf-8'))
-
+        newData = new_client_socket.recv(BUFFER_SIZE).decode('utf-8')
+        print(newData)
+    
 def list_files():
     listMessage = "LIST"
     client_socket.send(listMessage.encode('utf-8'))
