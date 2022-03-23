@@ -10,6 +10,8 @@ import os
 import struct
 import time
 
+new_port_number = 0
+
 # Method for Server Instruction Commands Menu
 def command_menu(connection_socket):
     while True:
