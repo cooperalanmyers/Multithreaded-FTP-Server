@@ -63,8 +63,10 @@ def dataConnection():
     new_client_socket.bind((server_ip, int(new_server_port)))
 
     new_client_socket.listen()
-      
+    
+    newData = new_client_socket.recv(buffer_size)
     # recieve!!!!
+    print(newData)
     
     # newData = "Client as Server Connected"
     # new_client_socket.send(newData.encode('utf-8'))
