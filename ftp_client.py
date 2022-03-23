@@ -27,7 +27,7 @@ def connect():
     connectPort = connectTemp[2]
 
     # If Client Says "CONNECT" Then Connect
-    if connectTemp[0] == paramOne:
+    if connectTemp[0].upper() == paramOne: 
         client_socket.connect((connectIP, int(connectPort)))
         client_socket.send(paramOne.encode('utf-8'))
 
