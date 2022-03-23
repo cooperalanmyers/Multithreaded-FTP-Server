@@ -34,8 +34,7 @@ def connect():
     if connectTemp[0].upper() == paramOne: 
         client_socket.connect((connectIP, int(connectPort)))
         client_socket.send(paramOne.encode('utf-8'))
-        
-    client_socket.send(new_server_port.encode('utf-8'))
+        client_socket.send(new_server_port.encode('utf-8'))
 
 def list_files():
     listMessage = "LIST"
