@@ -18,6 +18,9 @@ new_server_port = str(new_server_port)
 # Creating Client Socket
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+new_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+
 # Connect Method From Client Input
 def connect():
     print ("CONNECT <server name/IP address> <server port>")
@@ -59,7 +62,7 @@ def quit():
     return
 
 def dataConnection():
-    new_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    # new_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     new_client_socket.bind((server_ip, int(new_server_port)))
 
     new_client_socket.listen()
