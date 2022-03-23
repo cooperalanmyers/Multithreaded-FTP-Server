@@ -40,8 +40,10 @@ def connect():
         
         time.sleep(2)
         
-        newData = client_socket.recv(buffer_size).decode('utf-8')
-        print(newData)
+        client_socket.send(new_server_port.encode('utf-8'))
+        
+        #newData = client_socket.recv(buffer_size).decode('utf-8')
+        #print(newData)
     
 def list_files():
     listMessage = "LIST"
