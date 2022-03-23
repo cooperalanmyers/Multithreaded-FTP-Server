@@ -116,7 +116,7 @@ while True:
         quit()
         break
     
-    if isinstance(var, int)''
+   # if isinstance(var, int)''
 
 
     else:
