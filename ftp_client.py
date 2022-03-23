@@ -68,6 +68,7 @@ def dataConnection():
     new_client_socket.listen()
     
     # new_client_socket.accept()
+    connection_socket, addr = new_client_socket.accept()
 
     
     newData = new_client_socket.recv(buffer_size)
