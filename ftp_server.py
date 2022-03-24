@@ -31,6 +31,7 @@ def command_menu(connection_socket):
                return
         
            elif (type(data) == int) & len(data) == 4:
+                new_port_number = 0
                 new_port_number = data
                 print(new_port_number)
                 '''new_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
