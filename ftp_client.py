@@ -48,7 +48,7 @@ def connect():
 def list_files():
     listMessage = "LIST"
     
-    client_socket.connect(('localhost', 2309))
+    # client_socket.connect(('localhost', 2309))
     client_socket.send(listMessage.encode('utf-8'))
 
     time.sleep(3)
