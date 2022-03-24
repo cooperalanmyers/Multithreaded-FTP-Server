@@ -48,10 +48,23 @@ def connect():
 def list_files():
     listMessage = "LIST"
     client_socket.send(listMessage.encode('utf-8'))
-    #print ("Searching for list of files..\n")
 
+    time.sleep(3)
+    
+    # new_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    new_client_socket.bind((server_ip, int(new_server_port)))
+    new_client_socket.listen()
+    
+    # new_client_socket.accept()
+    connection_socket, addr = new_client_socket.accept()
+    
+    fetchFiles(connection_socket)
+    
+    connection_socket.close()
+    return
+    
     # Helper Method For New Data Connection
-    dataConnection()
+    # dataConnection()
 
 def retr():
     pass
