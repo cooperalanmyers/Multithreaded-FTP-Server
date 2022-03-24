@@ -61,6 +61,7 @@ def list_files():
     fetchFiles(connection_socket)
     
     connection_socket.close()
+    new_client_socket.close()
     return
     
     # Helper Method For New Data Connection
