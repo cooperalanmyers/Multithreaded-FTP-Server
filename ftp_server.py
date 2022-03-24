@@ -15,8 +15,6 @@ new_port_number = 0
 # Method for Server Instruction Commands Menu
 def command_menu(connection_socket):
     
-    new_port_number = 0
-
     while True:
            print ("\n\nWaiting for instruction")
            data = connection_socket.recv(BUFFER_SIZE).decode('utf-8')
@@ -26,7 +24,8 @@ def command_menu(connection_socket):
     
            # If Command Matches go to Following Helper Method
            if data == "LIST":
-               list_files()
+               list_files()            
+               
            elif data == "RETR":
                retr()
            elif data == "STOR":
@@ -63,6 +62,8 @@ def list_files():
     print("Listing files now!\n")
     
     new_port = int(connection_socket.recv(BUFFER_SIZE).decode('utf-8'))
+
+    # new_port = int(connection_socket.recv(BUFFER_SIZE).decode('utf-8'))
     # new_port = int(server_socket.recv(BUFFER_SIZE).decode('utf-8'))
     # new_port = .recv(BUFFER_SIZE).decode('utf-8')
 
