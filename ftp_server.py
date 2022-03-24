@@ -77,7 +77,7 @@ def retr():
 def stor():
       return
 
-
+"""
 def dataConnection():
     return
     # new_server_socket.connect((server_ip, int(new_port_number)))
@@ -85,7 +85,7 @@ def dataConnection():
 
     #newData = "Now Connected!"
     #new_server_socket.send(newData.encode('utf-8'))
-    
+"""
     
 
 # Beginning Message to Server
