@@ -63,7 +63,7 @@ def list_files():
     print("Listing files now!\n")
     
     
-    new_port = int(connection_socket.recv(BUFFER_SIZE).decode('utf-8'))
+    new_port = int(server_socket.recv(BUFFER_SIZE).decode('utf-8'))
     # new_port = connection_socket.recv(BUFFER_SIZE).decode('utf-8')
 
     
