@@ -48,9 +48,7 @@ def connect():
 def list_files():
     listMessage = "LIST"
     
-    connectIP = '127.0.0.1' if connectTemp[1] == 'localhost' else connectTemp[1]
-    
-    client_socket.connect((connectIP, int(connectPort)))
+    client_socket.connect(('localhost', int(connectPort)))
     client_socket.send(listMessage.encode('utf-8'))
 
     time.sleep(3)
