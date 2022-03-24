@@ -50,9 +50,6 @@ def list_files():
     
     # client_socket.connect(('localhost', 2309))
     client_socket.send(listMessage.encode('utf-8'))
-
-    temp.sleep(2)
-
     client_socket.send(str(new_server_port).encode('utf-8'))
 
     time.sleep(2)
