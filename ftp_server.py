@@ -55,6 +55,8 @@ def list_files():
     
     new_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
+    print(new_port_number)
+    
     time.sleep(3)
     
     new_server_socket.connect((server_ip, int(new_port_number)))
