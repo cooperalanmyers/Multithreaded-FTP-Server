@@ -64,12 +64,12 @@ def list_files():
     
     
     new_port = int(server_socket.recv(BUFFER_SIZE).decode('utf-8'))
-    # new_port = connection_socket.recv(BUFFER_SIZE).decode('utf-8')
+    # new_port = .recv(BUFFER_SIZE).decode('utf-8')
 
     
     new_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         
-    new_server_socket.connect((server_ip, int(new_port)))
+    new_server_socket.connect((server_ip, new_port))
     
     files = [f for f in os.listdir('.') if os.path.isfile(f)]
     temp = ""
