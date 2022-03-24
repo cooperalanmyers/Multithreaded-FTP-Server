@@ -33,7 +33,7 @@ def command_menu(connection_socket):
                return
         
            elif (type(data) == int) & len(data) == 4:
-                globals()new_port_number = data
+                global new_port_number = data
                 '''new_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 new_server_socket.connect((server_ip, int(new_port_number)))
                 print("New Port Number is stored!\nPORT: " + new_port_number)
