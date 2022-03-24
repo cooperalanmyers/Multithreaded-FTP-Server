@@ -56,8 +56,12 @@ def list_files():
     new_client_socket.bind((server_ip, int(new_server_port)))
     new_client_socket.listen()
     
+    temp.sleep(3)
+    
     # new_client_socket.accept()
-    connection_socket, addr = new_client_socket.accept()
+    # connection_socket, addr = new_client_socket.accept()
+    new_client_socket.accept()
+
     
     grab_files(connection_socket)
     
