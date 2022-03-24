@@ -20,9 +20,6 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 new_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-paramOne = 'CONNECT'
-connectIP = '127.0.0.1' if connectTemp[1] == 'localhost' else connectTemp[1]
-
 # Connect Method From Client Input
 def connect():
     print ("CONNECT <server name/IP address> <server port>")
@@ -31,6 +28,9 @@ def connect():
     separator = ' '
     connectTemp = connectionData.split(separator, -1)
 
+    paramOne = 'CONNECT'
+    connectIP = '127.0.0.1' if connectTemp[1] == 'localhost' else connectTemp[1]
+    
     connectPort = connectTemp[2]
 
     # If Client Says "CONNECT" Then Connect
