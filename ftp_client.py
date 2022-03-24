@@ -58,7 +58,7 @@ def list_files():
     # new_client_socket.accept()
     connection_socket, addr = new_client_socket.accept()
     
-    fetchFiles(connection_socket)
+    grab_files(connection_socket)
     
     connection_socket.close()
     new_client_socket.close()
@@ -66,6 +66,11 @@ def list_files():
     
     # Helper Method For New Data Connection
     # dataConnection()
+    
+def grab_files():
+    newDataForFiles = new_client_socket.recv(buffer_size)
+    print(newDataForFiles)
+    return
 
 def retr():
     pass
