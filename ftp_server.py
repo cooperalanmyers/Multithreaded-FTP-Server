@@ -51,7 +51,25 @@ def quit():
     return
 
 def list_files():
+    print("Listing files now!\n")
     
+    data_conn_port = int(connection_socket.recv(BUFFER_SIZE).decode('utf-8'))
+    
+    data_socket = socket.socket(AF_INET, socket.SOCK_STREAM)
+    
+    time.sleep(1)
+    
+    data_socket.connect((addr[0], int(data_conn_port)))
+    
+    files = [f for f in os.listdir('.') if os.path.isfile(f)]
+    temp = ""
+    
+    for f in files:
+        temp = temp + f + "\n"
+        print(temp)    
+    
+    data_socket.send(temp.encode('utf-8'))
+    data_socket.close()
     
     return
       
