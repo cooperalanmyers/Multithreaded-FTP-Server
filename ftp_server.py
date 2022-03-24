@@ -12,6 +12,9 @@ import time
 
 # Method for Server Instruction Commands Menu
 def command_menu(connection_socket):
+    
+    new_port_number = 0
+
     while True:
            print ("\n\nWaiting for instruction")
            data = connection_socket.recv(BUFFER_SIZE).decode('utf-8')
@@ -29,7 +32,7 @@ def command_menu(connection_socket):
            elif data == "QUIT":
                quit()
                return
-        
+           
            elif (type(data) == int) & len(data) == 4:
                 new_port_number = 0
                 new_port_number = data
