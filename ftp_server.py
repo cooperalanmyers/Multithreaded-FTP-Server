@@ -53,7 +53,7 @@ def quit():
 def list_files():
     print("Listing files now!\n")
     
-    new_server_socket = socket.socket(AF_INET, socket.SOCK_STREAM)
+    new_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
     time.sleep(1)
     
