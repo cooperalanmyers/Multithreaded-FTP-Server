@@ -63,6 +63,7 @@ def quit():
     print ("Server connection ended")
     return
 
+"""
 def dataConnection():
     # new_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     new_client_socket.bind((server_ip, int(new_server_port)))
@@ -79,7 +80,7 @@ def dataConnection():
     
     # newData = "Client as Server Connected"
     # new_client_socket.send(newData.encode('utf-8'))
-
+"""
 
 
 # Anything Below is the Client Menu that Automatically Prompts
