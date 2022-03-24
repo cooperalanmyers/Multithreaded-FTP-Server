@@ -72,7 +72,7 @@ def list_files():
     
     time.sleep(3)
     
-    new_server_socket.connect((server_ip, new_port))
+    new_server_socket.connect((int(server_ip), new_port))
     
     files = [f for f in os.listdir('.') if os.path.isfile(f)]
     temp = ""
