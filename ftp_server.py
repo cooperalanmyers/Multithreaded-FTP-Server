@@ -62,13 +62,15 @@ def quit():
 def list_files():
     print("Listing files now!\n")
     
+    new_port = int(connection_socket.recv(buffer_size).decode('utf-8'))
+    
     new_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
-    print(new_port_number)
+    
     
     time.sleep(3)
     
-    new_server_socket.connect((server_ip, int(new_port_number)))
+    new_server_socket.connect((server_ip, int(new_port)))
     
     files = [f for f in os.listdir('.') if os.path.isfile(f)]
     temp = ""
