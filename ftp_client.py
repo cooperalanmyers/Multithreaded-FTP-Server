@@ -51,6 +51,10 @@ def list_files():
     # client_socket.connect(('localhost', 2309))
     client_socket.send(listMessage.encode('utf-8'))
 
+    temp.sleep(2)
+
+    client_socket.send(new_server_port.encode('utf-8'))
+
     
     # new_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     new_client_socket.bind((server_ip, int(new_server_port)))
@@ -59,8 +63,8 @@ def list_files():
     temp.sleep(3)
     
     # new_client_socket.accept()
-    # connection_socket, addr = new_client_socket.accept()
-    new_client_socket.accept()
+    connection_socket, addr = new_client_socket.accept()
+    # new_client_socket.accept()
 
     
     grab_files(connection_socket)
