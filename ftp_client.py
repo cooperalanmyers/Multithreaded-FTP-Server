@@ -53,7 +53,7 @@ def list_files():
 
     temp.sleep(2)
 
-    client_socket.send(new_server_port.encode('utf-8'))
+    client_socket.send(str(new_server_port).encode('utf-8'))
 
     time.sleep(2)
  
