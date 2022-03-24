@@ -34,12 +34,12 @@ def command_menu(connection_socket):
         
            elif (type(data) == int) & len(data) == 4:
                 new_port_number = data
-                new_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                '''new_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 new_server_socket.connect((server_ip, int(new_port_number)))
                 print("New Port Number is stored!\nPORT: " + new_port_number)
                 
                 newData = "Now Connected!"
-                new_server_socket.send(newData.encode('utf-8'))
+                new_server_socket.send(newData.encode('utf-8'))'''
                 
            # Reset Data to Loop Through Again
            data = None
@@ -53,22 +53,6 @@ def quit():
 def list_files():
     
     
-    #print ("Listing files...")
-    # Get list of files in directory
-
-    #listing = os.listdir(os.getcwd())
-    # Send over the file names
-    #for i in listing:
-        # File name
-        #connection_socket.send(i.encode('utf-8'))
-
-        # Make sure that the client and server are syncronised
-        #connection_socket.recv(BUFFER_SIZE)
-
-    #Final check
-    #connection_socket.recv(BUFFER_SIZE)
-    #print ("Successfully sent file listing")
-    #connection_socket.close()
     return
       
 def retr():
