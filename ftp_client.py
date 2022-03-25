@@ -40,7 +40,7 @@ def connect():
         
         time.sleep(3)
         
-        client_socket.send(new_server_port.encode('utf-8'))
+        client_socket.send(str(new_server_port).encode('utf-8'))
         
         #newData = client_socket.recv(buffer_size).decode('utf-8')
         #print(newData)
