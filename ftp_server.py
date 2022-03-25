@@ -70,6 +70,8 @@ def quit():
 
 def port():
         # new_port = int(connection_socket.recv(BUFFER_SIZE).decode('utf-8'))
+        
+        print("Made it to port method")
         print(port_num)
 
 def list_files():
