@@ -34,16 +34,15 @@ def command_menu(connection_socket):
                 
            elif data == "PORT":
                port()
-           
-           elif data == int:
-               port_num = data
-               print(port_num)
-               port()
                 
            elif data == "QUIT":
                quit()
-                
                return
+        
+           else:
+               port_num = data
+               print(port_num)
+               port()
            
            '''elif (type(data) == int) & len(data) == 4:
                 new_port_number = 0
