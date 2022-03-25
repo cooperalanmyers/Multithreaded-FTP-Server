@@ -33,6 +33,7 @@ def command_menu(connection_socket):
                stor()
            
            elif data == int:
+               port_num = data
                port()
                 
            elif data == "QUIT":
@@ -65,8 +66,8 @@ def quit():
     return
 
 def port():
-        new_port = int(connection_socket.recv(BUFFER_SIZE).decode('utf-8'))
-        print(new_port)
+        # new_port = int(connection_socket.recv(BUFFER_SIZE).decode('utf-8'))
+        print(port_num)
 
 def list_files():
     print("Listing files now!\n")
