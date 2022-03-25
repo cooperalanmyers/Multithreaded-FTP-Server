@@ -32,7 +32,7 @@ def command_menu(connection_socket):
            elif data == "STOR":
                stor()
            
-           elif data == "PORT":
+           elif data == int:
                port()
                 
            elif data == "QUIT":
