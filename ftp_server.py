@@ -37,6 +37,7 @@ def command_menu(connection_socket):
            
            elif data == int:
                port_num = data
+               print(port_num)
                port()
                 
            elif data == "QUIT":
