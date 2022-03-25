@@ -93,8 +93,6 @@ def quit():
 def new_port_check():
     portMessage = "PORT"
     client_socket.send(portMessage.encode('utf-8'))
-    client_socket.send(str(new_server_port).encode('utf-8'))
-
 
 
 """
