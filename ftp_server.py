@@ -41,7 +41,7 @@ def command_menu(connection_socket):
         
            else:
                port_num = data
-               print(port_num)
+               print("Here is the new Port Number: " + port_num)
                port()
                
            
