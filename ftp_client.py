@@ -38,7 +38,7 @@ def connect():
         client_socket.connect((connectIP, int(connectPort)))
         client_socket.send(paramOne.encode('utf-8'))
         
-        time.sleep(2)
+        time.sleep(3)
         
         client_socket.send(new_server_port.encode('utf-8'))
         
