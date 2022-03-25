@@ -39,7 +39,7 @@ def command_menu(connection_socket):
                quit()
                return
         
-           else:
+           elif data == int:
                port_num = data
                print("Here is the new Port Number: " + port_num)
                return port_num
