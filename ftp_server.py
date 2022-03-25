@@ -42,6 +42,9 @@ def command_menu(connection_socket):
            else:
                port_num = data
                print("Here is the new Port Number: " + port_num)
+               return port_num
+               # return port here and pass through port test
+                
                port()
                
            
@@ -69,7 +72,7 @@ def quit():
     print("Successfully disconnected from client")
     return
 
-def port():
+def port(port_num):
         # new_port = int(connection_socket.recv(BUFFER_SIZE).decode('utf-8'))
         
         print("Made it to port method")
