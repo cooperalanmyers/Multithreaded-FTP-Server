@@ -31,6 +31,9 @@ def command_menu(connection_socket):
                 
            elif data == "STOR":
                stor()
+                
+           elif data == "PORT":
+               port()
            
            elif data == int:
                port_num = data
