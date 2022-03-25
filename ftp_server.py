@@ -43,6 +43,7 @@ def command_menu(connection_socket):
                port_num = data
                print(port_num)
                port()
+               
            
            '''elif (type(data) == int) & len(data) == 4:
                 new_port_number = 0
