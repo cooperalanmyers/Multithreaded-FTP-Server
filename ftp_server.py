@@ -28,10 +28,16 @@ def command_menu(connection_socket):
                
            elif data == "RETR":
                retr()
+                
            elif data == "STOR":
                stor()
+           
+           elif data == "PORT":
+               port()
+                
            elif data == "QUIT":
                quit()
+                
                return
            
            '''elif (type(data) == int) & len(data) == 4:
@@ -57,6 +63,10 @@ def quit():
     connection_socket.close()
     print("Successfully disconnected from client")
     return
+
+def port():
+        new_port = int(connection_socket.recv(BUFFER_SIZE).decode('utf-8'))
+        print(new_port)
 
 def list_files():
     print("Listing files now!\n")
