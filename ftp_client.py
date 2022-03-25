@@ -90,6 +90,11 @@ def quit():
     print ("Server connection ended")
     return
 
+def new_port_check():
+    portMessage = "PORT"
+    client_socket.send(portMessage.encode('utf-8'))
+
+
 """
 def dataConnection():
     # new_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -119,6 +124,7 @@ print ("""\n\nWelcome to the FTP client.
         \nLIST              : List files
         \nRETR              : Retrieve file
         \nSTOR              : Send file
+        \nPORT              : New Port Name
         \nQUIT              : Exit\n""")
 
 while True:
@@ -138,9 +144,11 @@ while True:
     elif prompt[:4].upper() == "STOR":
         store_file()
 
+    elif prompt[:4].upper() == "PORT":
+        new_port_check()
+        
     elif prompt[:4].upper() == "QUIT":
         quit()
-        break
     
     #if isinstance(var, int)''
 
